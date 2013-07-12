@@ -1,0 +1,70 @@
+{
+	"name" : "OpenBlockIP",
+	"description" : "A Free Open Source Software to record attacking IP",
+	"type" : "project",
+	"authors" : [{
+			"name" : "Jean-Yves NOLEN",
+			"email" : "dev@jynolen.fr",
+			"role" : "Manager ^_^"
+		}
+	],
+	"keywords" : [
+		"IP Attack Block"
+	],
+	"license" : [
+		"BSD-3-Clause-Clear"
+	],
+	"require" : {
+		"sonata-project/admin-bundle" : "master-dev",
+		"symfony/symfony" : "2.2.*",
+		"friendsofsymfony/user-bundle" : "master-dev",
+		"symfony/swiftmailer-bundle" : "2.2.*",
+		"doctrine/orm" : "~2.2,>=2.2.3",
+		"jms/security-extra-bundle" : "1.4.*",
+		"symfony/assetic-bundle" : "2.1.*",
+		"jms/di-extra-bundle" : "1.3.*",
+		"twig/extensions" : "1.0.*",
+		"sonata-project/doctrine-extensions" : "master-dev",
+		"php" : ">=5.3.3",
+		"sensio/generator-bundle" : "2.2.*",
+		"symfony/monolog-bundle" : "2.2.*",
+		"sensio/framework-extra-bundle" : "2.2.*",
+		"sensio/distribution-bundle" : "2.2.*",
+		"doctrine/doctrine-bundle" : "1.2.*"
+	},
+	"autoload" : {
+		"psr-0" : {
+			"" : "src/"
+		}
+	},
+	"minimum-stability" : "dev",
+	"support" : {
+		"source" : "https://github.com/Johnvox/OpenBlockIP",
+		"email" : "dev@jynolen.fr",
+		"issues" : "https://github.com/Johnvox/OpenBlockIP/issues"
+	},
+	"config" : {
+		"bin-dir" : "bin"
+	},
+	"scripts" : {
+		"post-update-cmd" : [
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
+		],
+		"post-install-cmd" : [
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+			"Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
+		]
+	},
+	"extra" : {
+		"branch-alias" : {
+			"dev-master" : "2.2-dev"
+		},
+		"symfony-web-dir" : "web",
+		"symfony-app-dir" : "app"
+	}
+}
